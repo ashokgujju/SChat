@@ -1,5 +1,8 @@
 package com.as.schat;
 
+import com.parse.ParseAnalytics;
+import com.parse.ParseUser;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,13 +19,13 @@ public class MainActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
+		ParseAnalytics.trackAppOpened(getIntent());
 		setContentView(R.layout.activity_main);
-		Intent i = new Intent(this, LoginActivity.class);
-		i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
 		
-		startActivity(i);
-		
+		if(ParseUser.getCurrentUser() == null) {
+			Intent i = new Intent(this, LoginActivity.class);
+			startActivity(i);
+		}
 		
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()

@@ -8,5 +8,6 @@
     <string name="password">Password</string>
     <string name="login_button">Login</string>
     <string name="signup">Sign Up</string>
-
+    <string name="signup_error_message">Please make sure you enter a username, password and email address!</string>
+	<string name="signup_error_title">Oops!</string>
 </resources>
