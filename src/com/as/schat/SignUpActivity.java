@@ -27,7 +27,6 @@ public class SignUpActivity extends Activity{
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.activity_signup);
 		setProgressBarIndeterminateVisibility(false);
-		
 		mUsername = (EditText) findViewById(R.id.username_signup);
 		mPassword = (EditText) findViewById(R.id.password_signup);
 		mEmail = (EditText) findViewById(R.id.email);
@@ -36,8 +35,8 @@ public class SignUpActivity extends Activity{
 			
 			@Override
 			public void onClick(View arg0) {
+				setProgressBarIndeterminateVisibility(true);
 				
-					
 				String username = mUsername.getText().toString();
 				String password = mPassword.getText().toString();
 				String email = mEmail.getText().toString();
@@ -55,7 +54,7 @@ public class SignUpActivity extends Activity{
 					dialog.show();
 				}
 				else {
-					setProgressBarIndeterminateVisibility(true);	
+						
 					ParseUser newuser = new ParseUser();
 					newuser.setUsername(username);
 					newuser.setPassword(password);

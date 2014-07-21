@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.as.schat.LoginActivity" android:screenOrientation="portrait"></activity>
-        <activity android:name="com.as.schat.SignUpActivity" android:screenOrientation="portrait" android:parentActivityName="com.as.schat.LoginActivity"></activity>
+        <activity android:name="com.as.schat.SignUpActivity" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
