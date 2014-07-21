@@ -20,12 +20,12 @@ public class MainActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		
 		ParseAnalytics.trackAppOpened(getIntent());
-		setContentView(R.layout.activity_main);
 		
 		if(ParseUser.getCurrentUser() == null) {
-			Intent i = new Intent(this, LoginActivity.class);
-			startActivity(i);
+			navigateToLogin();
 		}
+		
+		setContentView(R.layout.activity_main);
 		
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
@@ -33,22 +33,26 @@ public class MainActivity extends ActionBarActivity {
 		}
 	}
 
+	private void navigateToLogin() {
+		Intent i = new Intent(this, LoginActivity.class);
+		i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+		startActivity(i);
+	}
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-
-		// Inflate the menu; this adds items to the action bar if it is present.
+		
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
+		
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
+		if (id == R.id.action_logout) {
+			navigateToLogin();
 		}
 		return super.onOptionsItemSelected(item);
 	}
@@ -58,9 +62,6 @@ public class MainActivity extends ActionBarActivity {
 	 */
 	public static class PlaceholderFragment extends Fragment {
 
-		public PlaceholderFragment() {
-		}
-
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
@@ -69,5 +70,4 @@ public class MainActivity extends ActionBarActivity {
 			return rootView;
 		}
 	}
-
 }

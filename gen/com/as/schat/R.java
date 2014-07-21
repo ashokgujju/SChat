@@ -992,10 +992,10 @@ containing a value of this type.
         public static final int action_bar_subtitle=0x7f050023;
         public static final int action_bar_title=0x7f050022;
         public static final int action_context_bar=0x7f05001d;
+        public static final int action_logout=0x7f050045;
         public static final int action_menu_divider=0x7f050016;
         public static final int action_menu_presenter=0x7f050017;
         public static final int action_mode_close_button=0x7f050024;
-        public static final int action_settings=0x7f050045;
         public static final int activity_chooser_view_content=0x7f050025;
         public static final int always=0x7f05000b;
         public static final int beginning=0x7f050011;
@@ -1158,6 +1158,7 @@ containing a value of this type.
         public static final int app_name=0x7f0a000d;
         public static final int hello_world=0x7f0a000e;
         public static final int login_button=0x7f0a0012;
+        public static final int menu_logout_lable=0x7f0a0016;
         public static final int password=0x7f0a0011;
         public static final int signup=0x7f0a0013;
         public static final int signup_error_message=0x7f0a0014;

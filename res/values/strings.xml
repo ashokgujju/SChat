@@ -10,4 +10,5 @@
     <string name="signup">Sign Up</string>
     <string name="signup_error_message">Please make sure you enter a username, password and email address!</string>
 	<string name="signup_error_title">Oops!</string>
+	<string name="menu_logout_lable">Logout</string>
 </resources>
